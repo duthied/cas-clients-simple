@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ClientApp2</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<h3>client-app-2</h3>
+<hr/>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<% if user_signed_in? %>
+  <div id="user_login_box" style="float:right">
+    <%= current_user.email %> |
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+  </div>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
